@@ -24,9 +24,18 @@ public class AvePersistenceManager {
         AvePersistenceManager.session.getTransaction().commit();
         System.out.println("¡Ave guardada con éxito!");
     }
-    public static void update(Ave ave) {
+    public static Ave update(Ave ave) {
+        return null;
+    }
+    public static Ave read(String especie) {
+        AvePersistenceManager.startSession();
+        Ave aveLeida = AvePersistenceManager.session.find(Ave.class, especie);
+        return aveLeida;
+    }
+    public static void delete(String especie) {
 
     }
-    //read
-    //delete
+    public static void delete(Ave ave) {
+
+    }
 }

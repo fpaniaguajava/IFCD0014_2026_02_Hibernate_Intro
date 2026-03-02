@@ -7,10 +7,18 @@ public class Main {
         //Iniciar sesión
         AvePersistenceManager.startSession();
 
-        Ave ave1 = new Ave("Milano", "Pardo", 2.3, true);
-        AvePersistenceManager.create(ave1);
+        //create
+        read();
 
         //Finalizar sesión
         AvePersistenceManager.finishSession();
+    }
+    static void create(){
+        Ave ave1 = new Ave("Milano", "Pardo", 2.3, true);
+        AvePersistenceManager.create(ave1);
+    }
+    static void read(){
+        Ave ave = AvePersistenceManager.read("Milano");
+        System.out.println(ave);
     }
 }

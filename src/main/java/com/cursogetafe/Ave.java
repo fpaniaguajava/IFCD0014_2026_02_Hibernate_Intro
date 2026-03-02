@@ -55,4 +55,14 @@ public class Ave {
     public void setPuedeVolar(boolean puedeVolar) {
         this.puedeVolar = puedeVolar;
     }
+
+    @Override
+    public String toString() {
+        return "Ave{" +
+                "especie='" + especie + '\'' +
+                ", color='" + color + '\'' +
+                ", envergadura=" + envergadura +
+                ", puedeVolar=" + puedeVolar +
+                '}';
+    }
 }
