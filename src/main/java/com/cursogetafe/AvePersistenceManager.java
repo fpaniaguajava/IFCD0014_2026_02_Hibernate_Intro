@@ -2,8 +2,8 @@ package com.cursogetafe;
 
 
 
+import jakarta.persistence.TypedQuery;
 import org.hibernate.Session;
-import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -43,9 +43,8 @@ public class AvePersistenceManager {
     }
     public static List<Ave> readAll(){
         AvePersistenceManager.startSession();
-        Query query = session.createQuery("FROM Ave");
-        List<Ave> aves = query.getResultList();
-        return aves;
+        TypedQuery<Ave> query = session.createQuery("FROM Ave", Ave.class);
+        return query.getResultList();
     }
     public static void delete(String especie) throws Exception {
         AvePersistenceManager.startSession();
